@@ -19,7 +19,7 @@ public class Range implements IntegerSequence {
     }
 
     public boolean hasNext() {
-
+        return current <= end;
     }
 
     //@throws NoSuchElementException
