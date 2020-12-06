@@ -24,7 +24,10 @@ public class Range implements IntegerSequence {
 
     //@throws NoSuchElementException
     public int next() {
-
+        if (!hasNext()) {
+            throw new NoSuchElementException("cannot go past end of Range");
+        }
+        return current++;
     }
 
 }
