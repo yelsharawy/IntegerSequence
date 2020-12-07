@@ -13,7 +13,7 @@ public class ArraySequence implements IntegerSequence {
     }
 
     public int length() {
-        return 0;
+        return arr.length;
     }
 
     public boolean hasNext() {
