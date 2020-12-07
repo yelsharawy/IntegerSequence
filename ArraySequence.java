@@ -9,7 +9,7 @@ public class ArraySequence implements IntegerSequence {
     }
 
     public void reset() {
-
+        index = 0;
     }
 
     public int length() {
