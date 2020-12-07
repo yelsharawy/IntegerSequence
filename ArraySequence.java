@@ -4,7 +4,8 @@ public class ArraySequence implements IntegerSequence {
     private int[] arr;
 
     public ArraySequence(int[] arr) {
-
+        this.arr = arr;
+        index = 0;
     }
 
     public void reset() {
