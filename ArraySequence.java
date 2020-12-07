@@ -2,12 +2,20 @@ import java.util.NoSuchElementException;
 
 public class ArraySequence implements IntegerSequence {
 
-    private int index;
-    private int[] arr;
+    private int index = 0;
+    private int[] data;
 
     public ArraySequence(int[] arr) {
-        this.arr = arr;
-        index = 0;
+        data = arr;
+    }
+
+    public ArraySequence(IntegerSequence otherSeq) {
+        otherSeq.reset();
+        data = new int[otherSeq.length()];
+        for (int i = 0; i < data.length; i++) {
+            data[i] = otherSeq.next();
+        }
+        otherSeq.reset();
     }
 
     public void reset() {
@@ -15,7 +23,7 @@ public class ArraySequence implements IntegerSequence {
     }
 
     public int length() {
-        return arr.length;
+        return data.length;
     }
 
     public boolean hasNext() {
@@ -27,7 +35,7 @@ public class ArraySequence implements IntegerSequence {
         if (!hasNext()) {
             throw new NoSuchElementException("cannot exceed end of array");
         }
-        return arr[index++];
+        return data[index++];
     }
 
 }
