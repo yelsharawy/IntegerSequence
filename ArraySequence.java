@@ -1,3 +1,5 @@
+import java.util.NoSuchElementException;
+
 public class ArraySequence implements IntegerSequence {
 
     private int index;
@@ -22,7 +24,10 @@ public class ArraySequence implements IntegerSequence {
 
     //@throws NoSuchElementException
     public int next() {
-        return 0;
+        if (!hasNext()) {
+            throw new NoSuchElementException("cannot exceed end of array");
+        }
+        return arr[index++];
     }
 
 }
