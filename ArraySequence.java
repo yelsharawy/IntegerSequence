@@ -1,4 +1,4 @@
-import java.util.NoSuchElementException;
+import java.util.*;
 
 public class ArraySequence implements IntegerSequence {
 
@@ -6,7 +6,7 @@ public class ArraySequence implements IntegerSequence {
     private int[] data;
 
     public ArraySequence(int[] arr) {
-        data = arr;
+        data = Arrays.copyOf(arr, arr.length);
     }
 
     public ArraySequence(IntegerSequence otherSeq) {
